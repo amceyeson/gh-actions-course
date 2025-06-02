@@ -1,0 +1,21 @@
+name: 06 - Workflow Events
+
+on:
+    push
+jobs:
+    echo-data:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Display-Information
+              run: |
+               echo "Event Name: ${{ github.event_name }}"
+               echo "Ref: ${{github.ref}}"
+               echo "SHA: ${{github.sha}}"
+               echo "Actor: ${{github.actor}}"
+               echo "RunID: ${{github.run_id}}"
+               echo "Run number: ${{github.run_number}}"
+            
+            -  name: Retrieve Variable
+               run:  |
+                 echo "Variable value {{vars.MY_VAR}}"
+
