@@ -1,9 +1,11 @@
 name: 06 - Workflow Events
 
 on:
-    push
+   push:
+   workflow_dispatch:
+
 jobs:
-    echo-data:
+  echo-data:
         runs-on: ubuntu-latest
         steps:
             - name: Display-Information
